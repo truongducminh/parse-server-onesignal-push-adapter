@@ -74,6 +74,10 @@ export class OneSignalPushAdapter {
       post['contents'] = {en: data['alert']};
       delete data['alert'];
     }
+    if(data['title']) {
+      post['headings'] = { en: data['title'] };
+      delete data['title'];
+    }
     if(data['sound']) {
       post['ios_sound'] = data['sound'];
       delete data['sound'];
@@ -127,7 +131,7 @@ export class OneSignalPushAdapter {
       delete data['alert'];
     }
     if(data['title']) {
-      post['title'] = {en: data['title']};
+      post['headings'] = { en: data['title'] };
       delete data['title'];
     }
     if(data['uri']) {
