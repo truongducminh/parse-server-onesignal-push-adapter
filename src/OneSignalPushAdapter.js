@@ -134,6 +134,10 @@ export class OneSignalPushAdapter {
       post['headings'] = { en: data['title'] };
       delete data['title'];
     }
+    if(data['group']) {
+      post['android_group'] = data['group'];
+      delete data['group'];
+    }
     if(data['uri']) {
       post['url'] = data['uri'];
     }
